@@ -1,6 +1,6 @@
 export interface GeneralResponse<T> {
     success: boolean;
-    value: T
+    data: T
     message: string;
 }
 

@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Product, ProductId } from '../../interfaces/product';
 import { Observable, firstValueFrom } from 'rxjs';
 import { GeneralResponse } from '../../interfaces/general-response';
 import { environment } from '../../../environments/environment.development';

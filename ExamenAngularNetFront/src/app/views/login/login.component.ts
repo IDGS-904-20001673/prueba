@@ -48,13 +48,16 @@ export class LoginComponent {
       }
     const body = this.form.value as login;   
     this.response = await this.service.login(body);
-    if (this.response.success != null) {
-      sessionStorage.setItem('id', this.response.value.id+"");
-      this.route.navigateByUrl("/productsUser");
+    console.log(this.response.success);
+    if (this.response.success == true) {
+      sessionStorage.setItem('name', this.response.data.name+"");
+      sessionStorage.setItem('token', this.response.data.token+"");
+
+      this.route.navigateByUrl("/videos");
     }else{
       this.success=null;
       sessionStorage.setItem('error', 'Inicio de sesion incorrecto, intenta nuevamente');
-      //window.location.reload();
+      window.location.reload();
     }
   }
 
